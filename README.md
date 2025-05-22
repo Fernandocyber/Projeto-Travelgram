@@ -24,6 +24,6 @@ Acesse o projeto clicando no link abaixo:
 
 Você pode visualizar o projeto diretamente pelo GitHub Pages:
 
-1. Acesse: [https://fernandocyber.github.io/Projeto-Travelgram/](https://fernandocyber.github.io/Projeto-Travelgram/)
+Acesse: [https://fernandocyber.github.io/Projeto-Travelgram/](https://fernandocyber.github.io/Projeto-Travelgram/)
 
 
