@@ -1,7 +1,15 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}    
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
 }
 
 :root {
@@ -14,13 +22,14 @@
     --text-color-secondary:#6c6c6c;  
 
     --font-family: "Poppins", sans-serif;
-    --text:16px/1,5 var(--font-family);
-    --text-lg: bold 32px/125% var(--font-family);
-    --text-md: 14px/170% var(--font-family);
-    --text-sm: 12px/170% var(--font-family);
+    --text:1rem/1,5 var(--font-family);
+    --text-lg: bold 2rem/125% var(--font-family);
+    --text-md: 0.875rem/170% var(--font-family);
+    --text-sm: 0.75rem/170% var(--font-family);
 }
     
 body {
+    
     font: var(--text);
     color: var(--text-color-secondary);
     background-color: var(--background-color);
@@ -37,11 +46,34 @@ a:hover {
 }
 
 .container{
-    padding-inline: 32px;
-    max-width: 1280px;
+    padding-inline: 2rem;
+    max-width: 80em;
     margin-inline: auto;
    
 }
 .bg-surface-color{
+    
     background-color: var(--surface-color);
+}
+
+@media (width <= 22.5rem){ /* Para telas até 360px de largura */
+
+    /* Esconde todos os links 'a' que não contêm uma imagem */
+    
+    li a:not(:has(img)) { /* :not(:has(img)) seleciona 'a' que NÃO tem 'img' dentro */
+        display: none;
+    }
+
+    /* Garante que os 'li' que contêm as imagens se alinhem */
+    li:has(img) { /* :has(img) seleciona 'li' que possui uma 'img' dentro */
+        display: inline-block; /* Faz com que os 'li' se comportem como elementos de linha com largura e altura */
+        vertical-align: middle; /* Ajuda a alinhar as imagens verticalmente, se elas tiverem alturas diferentes */
+    }
+    
+    /* Faz as imagens se comportarem como 'inline-block' para manter suas dimensões e estarem na mesma linha */
+    li a img { /* Seleciona imagens dentro de links dentro de 'li' */
+        display: inline-block; /* Permite que fiquem lado a lado */
+        /* Opcional: Adicione um pequeno espaçamento entre elas se necessário */
+        margin-right: 5px; 
+    }
 }
